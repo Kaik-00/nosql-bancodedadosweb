@@ -152,7 +152,7 @@ show collections
 Ver o que está dentro da collection, ou seja, o documento:
 db.enderecos.find()
 
-Exportando o banco de dados acima (põe no caminho da pasta. importação e exportação é sempre no caminho da pasta) bakup:
+Exportando o banco de dados acima (põe no caminho da pasta. importação e exportação é sempre no caminho da pasta) backup:
 mongodump -d meuBanco -o meuBanco
 
 Excluir o banco de dados:

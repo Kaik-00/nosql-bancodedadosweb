@@ -1,0 +1,27 @@
+Criação do banco de dados:
+use redefastfood
+
+Criação das collections e inserção dos dados:
+db.produtos.insertOne({ nome: "Batata Frita", quantidade: 1, preco: 10 })
+db.produtos.insertOne({ nome: "Hambúrger", quantidade: 2, preco: 25 })
+db.produtos.insertOne({ nome: "Refrigerante", quantidade: 1, preco: 7 })
+
+db.lojas.insertOne({ nome: "FastFood Centro", cidade: "São Paulo", endereco: "Av. Paulista, 1000" })
+db.lojas.insertOne({nome: "FastFood Bairro", cidade: "Rio de Janeiro", endereco:"shopping barra, loja 45"})
+db.lojas.insertOne({nome: "FastFood aeroporto", cidade: "Belo horizonte", endereco:"aeroporto Confins - Terminal 1"})
+
+Exibição dos dados armazenados:
+db.produtos.find().pretty()
+db.lojas.find().pretty()
+
+Backup (põe no caminho da pasta. importação e exportação é sempre no caminho da pasta):
+mongodump -d redefastfood -o meuBanco
+
+Exclusão do banco de dados:
+db.dropDatabase()
+
+Restaurando um banco de dados via backup (caminhho da pasta) restore:
+mongorestore meuBanco
+
+Exclusão do banco de dados:
+db.dropDatabase()

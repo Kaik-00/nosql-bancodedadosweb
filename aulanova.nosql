@@ -112,7 +112,7 @@ db.alunos.replaceOne({ id: 01 }, {trancamento: true})
 
 
 
-### Falta adicionar umas 13 linhas entre esse espaço e aquele
+### Falta adicionar umas 13 linhas entre esse espaço
 
 
 

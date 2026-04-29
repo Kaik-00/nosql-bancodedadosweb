@@ -1,0 +1,46 @@
+Criação do banco:
+use lavanderia
+
+db.cliente.insertOne({ nome: "Ana", telefone: "11 9704567", ativo: true, servicos_utilizados: "Secagem"})
+db.cliente.insertOne({ nome: "Kaik", telefone: "11 9504778", ativo: true, servicos_utilizados: "Lavagem"})
+
+db.pedidos.insertOne({cliente: "Ana", servicos: ["lavagem", "secagem", "passadoria"], valor: 120, status: "em andamento"})
+db.pedidos.insertOne({cliente: "Kaik", servicos: ["lavagem", "secagem"], valor: 50, status: "pendente"})
+
+db.pedidos.find( )
+
+db.pedidos.find({ status: "pendente" })
+
+db.pedidos.find({ valor: { $gt: 50 } })
+
+db.pedidos.updateOne({ cliente: "Ana" }, { $set: { status: "finalizado" }})
+
+db.pedidos.find({ cliente: "Ana" })
+
+db.pedidos.updateMany({valor: { $gt: 45 } }, {$set: {valor: 230}})
+
+const info = db.cliente.find()
+
+typeof info.nome
+typeof info.telefone
+typeof info.ativo
+
+db.cliente.deleteOne({ nome: "Ana" })
+db.cliente.deleteMany({ativo: true})
+
+db.createUser({
+    user: "User",
+    pwd: "senha123",
+    roles: [
+        { role: "readWrite", db: "lavanderia" }
+    ]
+})
+
+db.getUsers()
+
+db.dropUser("User")
+
+db.cliente.drop()
+
+db.dropDatabase()
+
